@@ -17,11 +17,11 @@ interface ChartData {
 
 export default function ProductChart({ data }: { data: ChartData[] }) {
     return (
-        <div className="h-48 w-full">
+        <div className="h-90 w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                     data={data}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    margin={{ top: 25, right: 25, left: 0, bottom: 0 }}
                 >
                     <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                     <XAxis
@@ -29,7 +29,7 @@ export default function ProductChart({ data }: { data: ChartData[] }) {
                         stroke="#666"
                         fontSize={12}
                         tickLine={false}
-                        axisLine={false}
+                        axisLine={true}
                     />
                     <YAxis
                         stroke="#666"

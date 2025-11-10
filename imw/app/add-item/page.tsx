@@ -100,7 +100,7 @@ export default async function AddProductPage() {
                             <div className="flex gap-5">
                                 <button
                                     type="submit"
-                                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                                    className="px-6 py-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900">
                                     Add Product
                                 </button>
                                 <Link
