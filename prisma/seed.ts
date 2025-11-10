@@ -1,13 +1,14 @@
 ﻿import { PrismaClient } from "@prisma/client";
+import {getCurrentUser} from "../lib/auth";
 const prisma = new PrismaClient();
 
 async function main() {
-    const demoUserId = "133767f0-768d-4338-a612-50c8dc722b84";
+    const user = await getCurrentUser();
+    const userId = user.id;
 
-    // Create sample products
     await prisma.product.createMany({
         data: Array.from({ length: 25 }).map((_, i) => ({
-            userId: demoUserId,
+            userId: userId,
             name: `Product ${i + 1}`,
             price: (Math.random() * 90 + 10).toFixed(2),
             quantity: Math.floor(Math.random() * 20),
@@ -17,7 +18,7 @@ async function main() {
     });
 
     console.log("Seed data created successfully!");
-    console.log(`Created 25 products for user ID: ${demoUserId}`);
+    console.log(`Created 25 products for user ID: ${userId}`);
 }
 
 main()
